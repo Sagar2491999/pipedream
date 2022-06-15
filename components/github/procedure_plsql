@@ -1,0 +1,47 @@
+create table dept(
+Dno number(5),
+Dname varchar2(15),
+Dloc varchar2(15)
+);
+create or replace procedure addDeptRecord(P_Dno in number, P_Dname in varchar2, P_Dloc in varchar2)
+as
+begin
+insert into dept values(p_Dno,P_Dname,P_Dloc);
+end;
+declare
+Dno number(5);
+Dname varchar2(15);
+Dloc varchar2(15);
+begin
+Dno:=5;
+Dname:='it';
+Dloc:='g Block';
+addDeptRecord(Dno,Dname,Dloc);
+end;
+select * from dept;
+
+
+create or replace procedure sqr(V_num in number)
+as
+V_answer number(10);
+begin
+V_answer:=V_num*v_num;
+dbms_output.put_line(V_answer);
+end;
+begin
+sqr(5);
+dbms_output.put_line('hii');
+end;
+
+create or replace procedure sqr1(x_in out number)
+as
+output number(10);
+begin
+output:=x_in*X_in;
+end;
+declare
+Po number(3):=4;
+begin
+sqr1(po);
+dbms_output.put_line(po);
+end;
